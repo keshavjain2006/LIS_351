@@ -1,0 +1,409 @@
+/* styles.css
+   A4: Completed CSS
+   Portfolio: Keshav Jain
+   Color Theme from A3 Planning:
+     Primary:    #0F172A (Deep Slate)
+     Secondary:  #6366F1 (Indigo)
+     Accent:     #F59E0B (Amber)
+     Background: #F1F5F9 (Light Gray)
+     White:      #FFFFFF
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap");
+
+/* ===== Base styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.site-header {
+  border-bottom: 1px solid #e2e8f0;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  /* TODO A (Flexbox):
+     Brand on left, nav on right, vertically centered, space between.
+  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  font-family: "Syne", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.brand .dot {
+  /* TODO B (Color): Light blue accent dot */
+  color: #6366f1;
+}
+
+.site-nav a {
+  margin-left: 18px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+/* ===== Hero ===== */
+.hero {
+  /* TODO C (Background image hero):
+     Cover background image with gradient overlay, min-height 360px.
+  */
+  background:
+    linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.88) 0%,
+      rgba(15, 23, 42, 0.55) 60%,
+      rgba(15, 23, 42, 0.3) 100%
+    ),
+    url("images/Professional-worskpace.avif") center center / cover no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  /* TODO D (Center content):
+     Center horizontally, add vertical padding.
+  */
+  text-align: left;
+  padding: 72px 0 64px;
+  max-width: 620px;
+}
+
+.hero h1 {
+  margin: 0;
+  /* TODO E (Typography): Large, uppercase headline */
+  font-family: "Syne", sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.hero-subhead {
+  margin: 10px 0 28px;
+  /* TODO F (Typography): Slightly smaller, softer color */
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  /* TODO G (Button styling): Dark filled button, white text */
+  background: #0f172a;
+  color: #ffffff;
+  border: 2px solid #0f172a;
+}
+
+.btn-outline {
+  /* TODO H (Button styling): Outlined button, indigo border + text */
+  border: 2px solid #6366f1;
+  color: #6366f1;
+  background: transparent;
+}
+
+/* ===== Features (3 columns) ===== */
+.features {
+  padding: 56px 0;
+  background: #ffffff;
+}
+
+.features-grid {
+  /* TODO I (Layout): Three features in a row with gap */
+  display: flex;
+  gap: 28px;
+}
+
+.feature {
+  /* TODO J (Sizing / alignment): Equal width, centered text */
+  flex: 1;
+  text-align: center;
+}
+
+.feature h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.feature p {
+  font-size: 13px;
+  color: #475569;
+  margin: 0;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #6366f1;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  color: #6366f1;
+  font-size: 22px;
+  background: #eef2ff;
+}
+
+/* ===== Featured content ===== */
+.featured {
+  padding: 52px 0 44px;
+  background: #f1f5f9;
+}
+
+.section-title {
+  text-align: center;
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.section-lede {
+  text-align: center;
+  max-width: 680px;
+  margin: 10px auto 28px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.media {
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ===== Secondary content (2 cards) ===== */
+.secondary {
+  padding: 44px 0 56px;
+  background: #ffffff;
+}
+
+.secondary-grid {
+  /* TODO K (Layout): Two cards side by side with gap */
+  display: flex;
+  gap: 28px;
+}
+
+.card {
+  /* TODO L (Card styling): Border, equal width */
+  flex: 1;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+}
+
+.card-text {
+  padding: 22px;
+}
+
+.card-text h3 {
+  margin: 0 0 8px;
+  font-family: "Syne", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0f172a;
+}
+
+.card-text p {
+  margin: 0 0 16px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.card-image {
+  min-height: 160px;
+  /* TODO M (Image block): background cover + center */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optional images (already provided) */
+.img-a {
+  background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=60");
+}
+.img-b {
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60");
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: #0f172a;
+  padding: 56px 0;
+}
+
+.cta-inner {
+  /* TODO N (Center CTA): Center text and button */
+  text-align: center;
+}
+
+.cta h2 {
+  font-family: "Syne", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.cta p {
+  color: #94a3b8;
+  font-size: 16px;
+  margin: 0 0 24px;
+}
+
+.cta .btn-dark {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #ffffff;
+}
+
+.cta .btn-outline {
+  border-color: #f59e0b;
+  color: #f59e0b;
+  margin-left: 10px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+  padding: 32px 0;
+}
+
+.footer-inner {
+  /* TODO O (Footer layout): footer-left on left, link columns on right, space between */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-left {
+  max-width: 360px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-left a {
+  color: #6366f1;
+}
+
+.footer-cols {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-col h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  font-family: "Syne", sans-serif;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin: 6px 0;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+/* ===== Accent bar / highlight color ===== */
+.accent {
+  color: #f59e0b;
+}
+.accent-bg {
+  background: #6366f1;
+}
